@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="impuesto_de_alcabala">Impuesto de Alcabala.</string>
+    <string name="unidad_de_referencia_procesal">Unidad de Referencia Procesal.</string>
+    <string name="impuesto_general_a_las_ventas_16_ipm_2">Impuesto General a las Ventas 16% + IPM 2%</string>
+</resources>

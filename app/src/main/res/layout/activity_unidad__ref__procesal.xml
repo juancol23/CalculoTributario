@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_unidad__ref__procesal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/calculadora_menu_fondo"
+    tools:context="legalmovil.com.calculotributario.view.calculadora.Unidad_Ref_Procesal">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/frameLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:background="@color/black"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@android:color/transparent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+
+                    >
+
+                    <ImageView
+                        android:layout_height="48dp"
+                        android:layout_marginLeft="5dp"
+                        android:src="@mipmap/calculadora_atras_fecha"
+                        android:layout_weight="1"
+                        android:layout_width="1dp"
+                        android:onClick="onClickCalAs"
+
+                        />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="12"
+                        android:gravity="center_vertical|right"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:text="URP"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView3"
+                            android:elevation="1dp"
+                            android:textColor="@android:color/white"
+                            android:paddingRight="40dp"
+                            android:layout_weight="0.72"
+                            android:textSize="18dp" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.Toolbar>
+            <!--app:popupTheme="@style/AppTheme.PopupOverlay"/>-->
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+    <TextView
+        android:text="Cantidad de URP"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:textColor="@color/email_color"
+        android:id="@+id/monto_alcabal"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
+        android:textColorLink="@android:color/white" />
+
+    <EditText
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+
+        android:ems="10"
+        android:textSize="25dp"
+        android:layout_marginTop="131dp"
+        android:id="@+id/campoValor"
+
+        android:digits="0123456789"
+        android:inputType="numberDecimal"
+
+
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:maxLength="8"
+        android:layout_centerHorizontal="true"
+        android:hint="0.0"
+        android:layout_alignParentTop="true" />
+
+
+    <TextView
+        android:text="Monto"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="185dp"
+        android:textColor="@color/email_color"
+        android:id="@+id/monto_alcabal_resto"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text=" _________________________________"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="225dp"
+        android:textColor="@color/white"
+        android:id="@+id/monto_alcabal_r2esto"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="0.0"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:id="@+id/campoResultado"
+        android:textSize="25dp"
+        android:layout_below="@+id/monto_alcabal_resto"
+        android:layout_alignLeft="@+id/monto_alcabal_resto"
+        android:layout_alignStart="@+id/monto_alcabal_resto" />
+
+
+</RelativeLayout>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1051937538086",
+    "firebase_url": "https://calculostributarios.firebaseio.com",
+    "project_id": "calculostributarios",
+    "storage_bucket": "calculostributarios.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1051937538086:android:d67bae7a3029bfbf",
+        "android_client_info": {
+          "package_name": "legalmovil.com.calculotributario"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1051937538086-8cs7fh5iud71g4cupckirv746j85mobn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0WTjbKg5hNmeSMb8khBAVcypRoQXgyk0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

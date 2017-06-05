@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_splash"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="legalmovil.com.calculotributario.view.splash.Splash">
+
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/imageView"
+        android:background="@mipmap/splash" />
+
+    <ImageView
+        android:id="@+id/imageViewTexto"
+        android:background="@mipmap/splash_lawtech"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_height="35dp"
+        android:layout_width="100dp"
+        android:visibility="visible" />
+
+
+
+    <ImageView
+        android:id="@+id/imageViewLogo"
+        android:background="@mipmap/splash_logo"
+        android:scaleType="fitXY"
+        android:layout_width="170dp"
+        android:layout_height="95dp"
+        android:layout_marginBottom="194dp"
+        android:layout_above="@+id/imageViewTexto"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/imageViewLogoBeta"
+        android:background="@mipmap/splash_logo_beta"
+        android:layout_marginBottom="15dp"
+        android:layout_alignBottom="@+id/imageViewLogo"
+        android:layout_toRightOf="@+id/imageViewLogo"
+        android:layout_toEndOf="@+id/imageViewLogo"
+        android:layout_height="10dp"
+        android:layout_width="25dp" />
+
+
+</RelativeLayout>
