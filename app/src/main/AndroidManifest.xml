@@ -2,7 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="legalmovil.com.calculotributario">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+
 
 
     <application
@@ -12,19 +16,25 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
-        <activity android:name=".view.splash.Splash">
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".view.splash.Splash" />
+        <activity android:name=".view.calculadora.MenuCalculadora" />
+        <activity android:name=".view.calculadora.CalculadoraAlcalada" />
+        <activity android:name=".view.calculadora.IgvEntorno" />
+        <activity android:name=".view.calculadora.InpuestoVehicular" />
+        <activity android:name=".view.calculadora.Unidad_Ref_Procesal" />
+        <activity android:name=".view.descargarSitiosOffline.DescargarHtml" />
+        <activity android:name=".view.descargarSitiosOffline.download" />
+        <activity android:name=".view.descargarSitiosOffline.Down">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.calculadora.MenuCalculadora" />
-        <activity android:name=".view.calculadora.CalculadoraAlcalada" />
-        <activity android:name=".view.calculadora.IgvEntorno" />
-        <activity android:name=".view.calculadora.InpuestoVehicular" />
-        <activity android:name=".view.calculadora.Unidad_Ref_Procesal"></activity>
+        <activity android:name=".view.offline.AndroidDownloadFileByProgressBarActivity">
+
+        </activity>
     </application>
 
 </manifest>
