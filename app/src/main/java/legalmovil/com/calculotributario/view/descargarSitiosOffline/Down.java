@@ -4,6 +4,7 @@ import android.app.DownloadManager;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
@@ -67,33 +68,43 @@ public class Down extends AppCompatActivity {
                 if (!mydownload.exists()){
                     mydownload.mkdir();
                 }
-
-                Toast.makeText(getApplicationContext(),"Borrado"+mydownload, Toast.LENGTH_LONG).show();
-
+               // Toast.makeText(getApplicationContext(),"Borrado"+mydownload, Toast.LENGTH_LONG).show();
                 downloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
                 Uri uri = Uri.parse("https://legalmovil.com/Codigos/c_de_comercio.html");
                 DownloadManager.Request request = new DownloadManager.Request(uri);
-
 
                 request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
                 //request.setTitle("Comercio");
 
                   request.setDestinationInExternalFilesDir(Down.this,"OffCod2","Comer.html");
-
-
                 Long reference = downloadManager.enqueue(request);
-
-
-
-
-
 
             }
         });
-
-
     }
 
+    private void createDirectoryAndSaveFile(Bitmap imageToSave, String fileName) {
+
+        File direct = new File(Environment.getExternalStorageDirectory() + "/DirName");
+
+        if (!direct.exists()) {
+            File wallpaperDirectory = new File("/sdcard/DirName/");
+            wallpaperDirectory.mkdirs();
+        }
+        File file = new File(new File("/sdcard/DirName/"), fileName);
+
+        if (file.exists())
+            file.delete();
+        try {
+            FileOutputStream out = new FileOutputStream(file);
+            imageToSave.compress(Bitmap.CompressFormat.JPEG, 100, out);
+            out.flush();
+            out.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 
 }
 
