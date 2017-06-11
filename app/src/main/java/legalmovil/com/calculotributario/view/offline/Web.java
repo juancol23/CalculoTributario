@@ -44,45 +44,35 @@ public class Web extends AppCompatActivity {
         btnSincronizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 /*   try {
+                if (Environment.getExternalStorageState().equals(
+                        Environment.MEDIA_MOUNTED)) {
+                   /* // execute this when the downloader must be fired
+                    DownloadFile downloadFile = new DownloadFile();
+                    downloadFile.execute("https://legalmovil.com/Codigos/c_de_comercio.html");*/
+                    File file = new File (Environment
+                            .getExternalStorageDirectory()
+                            .getPath() + "/Android/data/"
+                            + getPackageName()
+                            + "/files/sdcard/DirName/index.html");
+                    if (file.exists()) {
+                        file.delete();
+                        if (!file.exists()) {
                         downloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+                       // Uri uri = Uri.parse("https://legalmovil.com/Codigos/c_de_comercio.html");
                         Uri uri = Uri.parse("https://legalmovil.com/Codigos/c_de_comercio.html");
                         DownloadManager.Request request = new DownloadManager.Request(uri);
                         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-                       request.setDestinationInExternalFilesDir(Web.this,"/sdcard/DirName/","index.html");
+                        request.setTitle("Título");
+                        request.setDestinationInExternalFilesDir(Web.this,"/sdcard/DirName/","index.html");
                         Long reference = downloadManager.enqueue(request);
-                        File file = new File(Environment.getExternalStorageDirectory().getPath());
-                        Log.e("TAG", "existe: " + file);
-                        Log.e("TAG", "existe lugar: " + Environment.getExternalStorageDirectory().getPath());
-                    } catch (Exception e) {
-                        Toast.makeText(getApplicationContext(), "Exception Info " +     e.getCause(),Toast.LENGTH_LONG).show();
-                        e.printStackTrace();
+                        Toast.makeText(Web.this, "Descarga Completa", Toast.LENGTH_SHORT).show();
                     }
-                WebView webview = (WebView) findViewById(R.id.webView1);
-                webview.loadUrl(Environment.getExternalStorageDirectory() + "/DirName/");
-                */
-                webView1.loadUrl("file://"
-                        + Environment
-                        .getExternalStorageDirectory()
-                        .getPath() + "/Android/data/"
-                        + getPackageName()
-                        + "/files/sdcard/DirName/index.html");
-                if (Environment.getExternalStorageState().equals(
-                        Environment.MEDIA_MOUNTED)) {
-
-                    // execute this when the downloader must be fired
-                    DownloadFile downloadFile = new DownloadFile();
-                    downloadFile.execute("https://legalmovil.com/Codigos/c_de_comercio.html");
-
+                }
                 } else {
                     Toast.makeText(getApplicationContext(), "Can't write to internal storage ",Toast.LENGTH_LONG).show();
-
                 }
             }
-
-
         });
-
     }
     private class DownloadFile extends AsyncTask<String, Integer, String> {
 
@@ -121,6 +111,15 @@ public class Web extends AppCompatActivity {
             }
             return null;
         }
+    }
+
+    public void Refrest(View view){
+        webView1.loadUrl("file://"
+                + Environment
+                .getExternalStorageDirectory()
+                .getPath() + "/Android/data/"
+                + getPackageName()
+                + "/files/sdcard/DirName/index.html");
     }
 }
 
